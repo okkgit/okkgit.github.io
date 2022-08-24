@@ -49,7 +49,6 @@ module.exports = {
             { text: 'Home', link: '/' }, // 导航栏按钮名字和链接
             { text: '笔记非博客', link: "/blog/博客笔记目录.md" },
             { text: '我的简历', link: "/CV/" },
-            { text: 'CodeServer', link: 'https://www.dgman.work/codeserver' },
             { // 下拉狂
                 text: '常用网站',
                 ariaLabel: 'Web Menu',
