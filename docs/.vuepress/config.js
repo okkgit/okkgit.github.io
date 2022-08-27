@@ -6,11 +6,11 @@ module.exports = {
     // 设置语言（不一定有用）
     lang: "zh-cn",
     // 页面抬头
-    title: 'Wayne Vin',
+    title: 'Wayne',
     // 仅仅是描述
     description: 'Wayne \'s Home',
     head: [
-        ['link', { rel: 'icon', href: '/boy.png' }]
+        ['link', { rel: 'icon', href: 'https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/boy.png' }]
     ],
     // dev 环境下的ip
     host: '0.0.0.0',
@@ -34,7 +34,7 @@ module.exports = {
         // 搜索框最多显示结果个数
         searchMaxSuggestions: 6,
         // 导航栏 logo
-        logo: '/boy.png',
+        logo: 'https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/boy.png',
         // 最后一次 git 提交的 时间， （可以使用false 禁用）
         // lastUpdated: "更新时间",
         lastUpdated: false,
@@ -48,15 +48,7 @@ module.exports = {
         nav: [
             { text: 'Home', link: '/' }, // 导航栏按钮名字和链接
             { text: '笔记非博客', link: "/blog/博客笔记目录.md" },
-            { text: '我的简历', link: "/cv/" },
-            { // 下拉狂
-                text: '常用网站',
-                ariaLabel: 'Web Menu',
-                items: [
-                    { text: "百度", link: "https://www.baidu.com" },
-                    { text: "谷歌", link: "https://www.google.com" },
-                ]
-            }
+            { text: '我的简历', link: "/cv/" }
         ],
         displayAllHeaders: true,
         // 侧边栏配置

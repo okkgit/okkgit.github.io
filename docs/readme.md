@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /boy.png
+heroImage: https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/boy.png
 heroText: Welcome to my homepage!
 tagline: I am Wayne, from Inner Mongolia. I always belive that the harder you work,the luckier you will be.
 ---
