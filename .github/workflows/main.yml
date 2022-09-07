@@ -14,13 +14,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: 环境准备
+      - name: npm安装
         run: npm install
 
       - name: blog目录生成
-        run: gen_blog_catalog.js
+        run: node gen_blog_catalog.js
           
-      - name: 构建
+      - name: blog编译
         run: npm run docs:build
 
       - name: 部署
