@@ -15,7 +15,7 @@ jobs:
           persist-credentials: false
           
       - name: 构建
-        run: npm install && npm run docs:build
+        run: npm install && node gen_blog_catalog.js && npm run docs:build
 
       - name: 部署
         uses: JamesIves/github-pages-deploy-action@releases/v3

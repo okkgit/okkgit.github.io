@@ -47,7 +47,7 @@ module.exports = {
         // 导航栏配置
         nav: [
             { text: 'Home', link: '/' }, // 导航栏按钮名字和链接
-            { text: '笔记非博客', link: "/blog/博客笔记目录.md" },
+            { text: 'blog目录', link: "/blog/catalog.md" },
             { text: '我的简历', link: "/cv/" }
         ],
         displayAllHeaders: true,

@@ -15,6 +15,11 @@ sidebar: auto
 - Set,是通过hash实现的String类型无序集合（hash O(1)时间复杂的增删改查）
 - zset，有序集合，类似set，string的集合，不可以重复，但要关联double类型的分数
 
+- 三种不常用的类型
+  - geo 存放地图数据包括经纬度城市。。。
+  - hyperloglog 不精确的去重计数
+  - bitmap 位图，有限集合
+
 ## Redis的两种持久化方法
 
 - 为了防止断电等情况，redis数据丢失，持久化，把数据存放到磁盘。
