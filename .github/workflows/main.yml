@@ -18,7 +18,7 @@ jobs:
         run: npm install
 
       - name: 运行自动化脚本
-        run: bash gen.js
+        run: sh gen.js
           
       - name: blog编译
         run: npm run docs:build
