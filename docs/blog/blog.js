@@ -2,6 +2,8 @@ let fs = require("fs")
 let path = require("path")
 var util = require('util');
 
+console.log("\n\n开始生成博客目录 >>>>> \n")
+
 var blog_path = './docs/blog';
 
 header = `---
@@ -14,7 +16,6 @@ title: blog 目录
 
 let body = []
 
-let root = "./docs/blog"
 function loadbody(dirpath, deep = 1, max_deep = 2) {
     if (max_deep < deep) {
         return
@@ -42,10 +43,10 @@ function loadbody(dirpath, deep = 1, max_deep = 2) {
     })
 }
 
-loadbody("./docs/blog", 1, 3)
+loadbody(__dirname, 1, 3)
 
 let data = header + "\n" + body.join("\n")
-fs.writeFile("./docs/blog/catalog.md", data, (err) => {
+fs.writeFile(path.join(__dirname,"readme.md"), data, (err) => {
     if (err) {
         console.log("生成目录文件出错")
     } else {

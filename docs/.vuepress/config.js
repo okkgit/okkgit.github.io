@@ -48,6 +48,7 @@ module.exports = {
         nav: [
             { text: 'Home', link: '/' }, // 导航栏按钮名字和链接
             { text: 'blog目录', link: "/blog/catalog.md" },
+            { text: 'coding', link: "/coding/" },
             { text: '我的简历', link: "/cv/" }
         ],
         displayAllHeaders: true,
