@@ -47,8 +47,14 @@ module.exports = {
         // 导航栏配置
         nav: [
             { text: 'Home', link: '/' }, // 导航栏按钮名字和链接
-            { text: 'blog目录', link: "/blog/" },
-            { text: 'coding', link: "/coding/" },
+            { 
+                text: '学习笔记', 
+                items: [
+                    { text: 'golang学习笔记', link: "/blog/" },
+                    { text: 'coding', link: "/coding/" },
+                    { text: 'k8s学习笔记', link: "/k8s/" }
+                ]
+            },
             { text: '我的简历', link: "/cv/" }
         ],
         displayAllHeaders: true,

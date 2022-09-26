@@ -2,13 +2,10 @@ let fs = require("fs")
 let path = require("path")
 var util = require('util');
 
-console.log("\n\n开始生成博客目录 >>>>> \n")
-
-var blog_path = './docs/blog';
 
 header = `---
 sidebar: auto
-title: blog 目录
+title: 目录
 ---
 
 # blog 目录
@@ -36,7 +33,7 @@ function loadbody(dirpath, deep = 1, max_deep = 2) {
             body.push("\n", util.format(msg))
             loadbody(itemPath, deep + 1, max_deep)
         } else if (stats.isFile() && item.toLowerCase().endsWith(".md")) {
-            var url = itemPath.replace(/\\/g, "/").replace("docs/", "")
+            var url = itemPath.replace(/\\/g, "/").replace(/[\s\S]+docs\//, "")
             var msg = util.format("- [%s](/%s)", text, url)
             body.push(msg)
         }
