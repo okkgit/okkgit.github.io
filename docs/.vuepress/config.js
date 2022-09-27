@@ -59,7 +59,7 @@ module.exports = {
                 text: '小成就', 
                 items: [
                     { text: '机器人相关', link: "/story/机器人团队.md" },
-                    { text: '公司项目', link: "/coding/公司项目" },
+                    { text: '公司项目', link: "/story/公司项目" },
                 ]
             },
             { text: '我的简历', link: "/cv/" }
