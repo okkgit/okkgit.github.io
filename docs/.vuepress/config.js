@@ -55,6 +55,13 @@ module.exports = {
                     { text: 'k8s学习笔记', link: "/k8s/" }
                 ]
             },
+            { 
+                text: '小成就', 
+                items: [
+                    { text: '机器人相关', link: "/story/机器人团队.md" },
+                    { text: '公司项目', link: "/coding/公司项目" },
+                ]
+            },
             { text: '我的简历', link: "/cv/" }
         ],
         displayAllHeaders: true,
