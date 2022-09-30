@@ -119,3 +119,29 @@ spec:
 - hostNetwork: 使用主计算机网络   
 - volumes: 存储卷
 - restartPolicy 重启策略
+
+### command && args
+::: tip 关于 command 和 args
+1. 如果command 和 args 都没有写，使用dockerfile的配置
+2. 如果command写了args没写那么dockerfile对应配置将忽略
+3. 如果command没写args写了， 那么dockerfile中Entrypoint命令会执行，并使用args
+4. 如果command和args都写了，dockerfile的配置忽略， 执行command并追加args参数
+:::
+
+### 进入容器
+`kubectl exec pod-name -n dev -c busybox -it /bin/sh`
+- 如果pod只有一个用户容器时候可以省略 -c ， 指定容器名字
+
+## 容器暴露端口 ports
+`kubectl explain pod.spec.containers.ports`
+- name 给端口起个名， pod内唯一性
+- containerPort:  容器的端口
+- hostPort： 主机上端口， **一般不设置**， 设置的话容易出现端口冲突问题
+- hostIP: 外部端口绑定主机ip, **一般省略**
+- protocol: 端口协议 TCP/UDP/SCTP, 一般使用默认值 TCP
+
+## 容器资源限制 内存 CPU
+- containers 容器的 resources字段
+- limits：限制容器使用最大资源， 超过limit时会被干掉，然后重启
+- requests: 容器设置最小资源，如果环境资源不足这个参数，容器无法启动
+  - cpu: "2"   
