@@ -44,3 +44,46 @@ spec:
 - 亲和性
   - 两个频繁交互的应用，有必要让两个pod部署的更靠近（比如同一个node上），这样可以减少网络性能消耗
 :::
+
+### nodeAffinity
+required during scheduling ignored during execution
+``` yaml
+pod.spec.affinity.nodeAffinity:
+  # 必须的，硬的，条件必须满足
+  requiredDuringSchedulingIgnoredDuringExecution:
+    nodeSelectorTerms:
+      matchFields: # 按照节点字段
+        key: string
+        values: string
+        operator: string # 关系符 Exists, DoesNotExists, In, NotIn, 
+      matchExpressions: # 按照节点标签
+        key: string
+        values: string
+        operator: string # 关系符 Exists, DoesNotExists, In, NotIn, Gt, Lt
+
+  # 首选的，软的， 条件不好可以不满足
+  preferredDuringSchedulingIgnoredDuringExecution:
+    nodeSelectorTerms:
+      matchFields: # 按照节点字段
+        key: string
+        values: string
+        operator: string # 关系符 Exists, DoesNotExists, In, NotIn, 
+      matchExpressions: # 按照节点标签
+        key: string
+        values: string
+        operator: string # 关系符 Exists, DoesNotExists, In, NotIn, Gt, Lt
+```
+
+::: tip matchExpressions使用
+``` yaml
+- matchExpressions:
+  - key: nodeenv
+    operator: Exists
+  - key: nodeenv
+    operator: In
+    values: ["a", "b"]
+  - key: nodeenv
+    operator: Gt  # 大于
+    values: "xxx"
+```
+:::
