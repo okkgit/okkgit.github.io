@@ -172,3 +172,160 @@ strategy:
 - 但是希望这个过程时自动化的，智能化的，省钱钱化的
 - HPA 可以获取pod利用率，针对性的调整目标副本数
 ![20221015133742](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/20221015133742.png)
+- 安装 `metrics-server` 来实现收集集群资源使用情况
+  - `kubectl top node`
+  - `kubectl top pod -n kube-system`
+
+### HPA 部署
+``` yml
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: pc-hpa
+  namespace: dev
+spec: 
+  minResplicas: 1 # 最小pod副本数
+  maxResplicas: 10 # 最大pod副本数
+  targetCPIItilizationPercentage: 30 # CPU使用率指标 cpu使用达到30%就该增加副本
+  scaleTargetRef: # 指定要控制的nginx信息
+    apiversion: apps/v1
+    kind: Deploument
+    name: nginx 
+```
+- `kubectl create -f xxx.yaml`
+- `kubectl get hpa -n dev`
+
+
+## DaemonSet 控制器 (S)
+- 保证集群上每一个台节点上都运行一个副本
+- 日志收集、节点监控、节点级别、每个节点有且有一个
+- 集群增删节点，对应的 ES 也会随之增删, 自动发现自动部署，自动移除
+
+### DaemonSet S 配置
+``` yml
+apiVersion: apps/v1
+kind: DaemoSet
+metadata:
+  name: esname
+  namespace: dev
+  labels: 
+    controller: daemonset
+
+spec:
+  revisionHistoryLimit: 3 # 保留历史版本数量
+  updateStrategy: 更新策略
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1 # 最大不可用状态pod最大值 int && 百分数
+  selector: 
+    matchLabels:
+      app: nginx-pod
+      matchExpressions: 
+        - {key: app, operator: In, values: [nginx-pod]}
+  
+  template:
+    metadata:
+      labels:
+        app: nginx-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.17.1
+        ports:
+        - containerPort: 80
+```
+
+- `kubectl get ds ds-name -n dev`
+- `kubectl get pod ds-name -n dev -o wide`
+
+## Job 
+- 批量处理、一次性任务
+- 保证一定数量的一次性pod执行成功
+
+### 资源清单文件
+``` yml
+apiVersion: apps/v1
+kind: Job
+metadata:
+  name: job-name
+  namespace: dev
+  labels: 
+    controller: job
+
+spec:
+  completions: 1 # 指定job需要执行成功次数，默认1
+  parallelism: 1 # 指定job在任一时刻应该并发运行的数量,默认1
+  activeDeadlineSeconds: 30 # 运行时间期限、超时未结束会被终止
+  backoffLimit: 6 # 失败重试次数默认6
+  manualSelector: true # 是否可以使用selector选择器选择，默认false
+  selector: 
+    matchLabels:
+      app: xxx-pod
+      matchExpressions: 
+        - {key: app, operator: In, values: [xxx-pod]}
+  
+  template:
+    metadata:
+      labels:
+        app: xxx-pod
+    spec:
+      restartPolicy: Never # 重启策略。必须设置为 Never 或者 OnFailure
+      containers:
+      - name: xxx
+        image: busybox:1.30
+        command: ["bin/sh", "-c", "for i in 3 2 1; do echo $i; sleep 2; done"]
+```
+- `kubectl create -f xxx.yml`
+- `kubectl delete -f xxx.yml`
+
+## CronJob CJ
+![20221018194230](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/20221018194230.png)
+- job控制器为管控对象
+- job控制器创建玩会立即执行
+- cronjob周期性计划运行，反复运行job
+
+### CronJob 资源清单文件
+``` yml
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cj-name
+  namespace: dev
+  labels:
+    controller: cronjob
+spec:
+  schedule: 0 12 * * *
+  croncurrencyPolicy: # 并发策略，前一次未执行完，是否如何执行后一次任务
+  failedJobHistoryLimit: 1 # 为失败的任务保历史记录数， default 1
+  successfulJobHistoryLimit: 3 # 成功任务保留历史记录数， default 3
+  startingDeadlineSeconds: # 作业超时
+  jobTemplate: # job控制器模板。其实就是job的定义
+    metadata:
+    spec: 
+      completions: 1
+      parallelism: 1
+      activeDeadlineSeconds: 30
+      backoffLimit: 6
+      manualSelector: true
+      selector: 
+        matchLabels:
+          app: counter-pod
+        matchExpressions:
+          - {key: app, operator: In, values: [xxx-pod]}
+      template: 
+        metadata:
+          labels:
+            app: xxx-pod
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: counter
+            image: busybox:1.30
+            command: ["bin/sh", "-c", "for i in 3 2 1; do echo $i; sleep 2; done"]
+
+```
+
+- croncurrencyPolicy: 并发策略
+  - Allow: default
+  - Forbid: 禁止并发，重叠跳过
+  - Replace: 替换， 取消当前正在运行的，启动新的
