@@ -7,19 +7,22 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: 获取代码
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
+      - name: 展示node版本信息
+        run: node -v
+
       - name: npm安装
         run: npm install
 
       - name: 运行自动化脚本
         run: bash ./gen.sh
-          
+
       - name: blog编译
         run: npm run docs:build
 
