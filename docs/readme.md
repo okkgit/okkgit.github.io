@@ -19,6 +19,9 @@ actionLink: /blog/
 <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=y05314y8obr" allowFullScreen="true"></iframe>
 
 ## 获得的奖状附件
+![20230311191420](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/20230311191420.png)
+![20230311191434](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/20230311191434.png)
+![20230311191302](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/20230311191302.png)
 ![参赛照片](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/参赛照片.jpg)
 ![全国机器人大赛人形机器人优胜奖证书](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/全国机器人大赛人形机器人优胜奖证书.jpg)
 ![全国机器人大赛二等奖证书](https://sprintln-1256351233.cos.ap-shanghai.myqcloud.com/img/全国机器人大赛二等奖证书.jpg)
