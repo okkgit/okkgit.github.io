@@ -62,7 +62,8 @@ module.exports = {
                     { text: '公司项目', link: "/story/公司项目" },
                 ]
             },
-            { text: '我的简历', link: "/cv/嵌入式" }
+            { text: '嵌入式简历', link: "/cv/嵌入式" },
+            { text: 'Golang简历', link: "/cv/" }
         ],
         displayAllHeaders: true,
         // 侧边栏配置
