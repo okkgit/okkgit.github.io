@@ -63,7 +63,6 @@ module.exports = {
                 ]
             },
             // { text: '嵌入式简历', link: "/cv/嵌入式" },
-            // { text: 'Golang简历', link: "/cv/" }
         ],
         displayAllHeaders: true,
         // 侧边栏配置
