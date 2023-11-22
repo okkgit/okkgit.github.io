@@ -7,7 +7,7 @@ actionLink: /blog/
 ---
 
 <VideoCard
-    videoSrc="//player.bilibili.com/player.html?aid=456648228&bvid=BV1d5411a7Uu&cid=224718900&page=1"
+    videoSrc="//player.bilibili.com/player.html?aid=456648228&bvid=BV1d5411a7Uu&cid=224718900&page=1&autoplay=0"
     videoName="麦克纳姆轮表白机器人"
     videoDescription="麦克纳姆轮表白机器人，gogogo"
     width = "50"
@@ -15,11 +15,11 @@ actionLink: /blog/
 />
 
 <VideoCard
-    videoSrc="//player.bilibili.com/player.html?aid=289997985&bvid=BV1mf4y1W7bv&cid=319319307&page=1"
+    videoSrc="//player.bilibili.com/player.html?aid=289997985&bvid=BV1mf4y1W7bv&cid=319319307&page=1&autoplay=0"
     videoName="全国机器人大赛游历项目参赛前调试"
     videoDescription="全国机器人大赛游历项目参赛前调试"
     width = "100%"
-    height = "200px"
+    height = "300px"
 />
 
 ## 机器人项目作品展示
