@@ -6,7 +6,11 @@ actionText: 博客目录→
 actionLink: /blog/
 ---
 
-
+<VideoCard
+    videoSrc="//player.bilibili.com/player.html?aid=456648228&bvid=BV1d5411a7Uu&cid=224718900&page=1"
+    videoName="麦克纳姆轮表白机器人"
+    videoDescription="麦克纳姆轮表白机器人，gogogo"
+/>
 
 ## 机器人项目作品展示
 - [麦克纳姆轮表白机器人](https://www.bilibili.com/video/BV1d5411a7Uu)  
