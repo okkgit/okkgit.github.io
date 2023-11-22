@@ -10,16 +10,20 @@ actionLink: /blog/
     videoSrc="//player.bilibili.com/player.html?aid=456648228&bvid=BV1d5411a7Uu&cid=224718900&page=1"
     videoName="麦克纳姆轮表白机器人"
     videoDescription="麦克纳姆轮表白机器人，gogogo"
+    width = "50"
+    height = "300px"
+/>
+
+<VideoCard
+    videoSrc="//player.bilibili.com/player.html?aid=289997985&bvid=BV1mf4y1W7bv&cid=319319307&page=1"
+    videoName="全国机器人大赛游历项目参赛前调试"
+    videoDescription="全国机器人大赛游历项目参赛前调试"
     width = "100%"
     height = "200px"
 />
 
 ## 机器人项目作品展示
-- [麦克纳姆轮表白机器人](https://www.bilibili.com/video/BV1d5411a7Uu)  
-<iframe src="//player.bilibili.com/player.html?aid=456648228&bvid=BV1d5411a7Uu&cid=224718900&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-- [全国机器人大赛游历项目参赛前调试](https://www.bilibili.com/video/BV1mf4y1W7bv?from=search&seid=15028316560055491947)  
-<iframe src="//player.bilibili.com/player.html?aid=289997985&bvid=BV1mf4y1W7bv&cid=319319307&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 ## 3D建模参赛作品
 - [3DDS参赛作品](https://v.qq.com/x/page/y05314y8obr.html)  
 <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=y05314y8obr" allowFullScreen="true"></iframe>
