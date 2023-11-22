@@ -10,6 +10,8 @@ actionLink: /blog/
     videoSrc="//player.bilibili.com/player.html?aid=456648228&bvid=BV1d5411a7Uu&cid=224718900&page=1"
     videoName="麦克纳姆轮表白机器人"
     videoDescription="麦克纳姆轮表白机器人，gogogo"
+    width = "100%"
+    height = "200px"
 />
 
 ## 机器人项目作品展示
