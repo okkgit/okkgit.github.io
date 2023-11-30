@@ -17,12 +17,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '20'
+
+      - name: yarn工具安装
+        run: npm install -g -yarn&&yarn -v
           
       - name: 展示node版本信息
         run: node -v
 
-      - name: npm安装
-        run: npm install
+      - name: yarn安装依赖包
+        run: yarn install
 
       - name: 运行自动化脚本
         run: bash ./gen.sh
