@@ -16,7 +16,7 @@ jobs:
       
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
           
       - name: 展示node版本信息
         run: node -v
