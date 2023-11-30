@@ -31,11 +31,16 @@ github地址：[github.com/okkgit](https://github.com/okkgit)
 - 江西理工大学   软件工程（机械设计制造机器自动化方向） | 2016.9-2020.7
 
 ### 专业技能
-- 熟悉go,了解py,
-- 中间件
-- 了解go-micro,
-- actions, 了解cicd
-- 了解stm32,frtos,有机器人经验,3d建模
+- 熟练掌握GO语言，了解channel， slice， channal，map，GMP模型调度器，gc垃圾回收，内存逃逸等底层原理
+- 了解掌握go-micro，gin，grom， grpc，protoc等框架使用；
+- 了解Python，php（维护并开发百度php项目）
+- 熟悉计算机网络原理，了解TCP，UDP，HTTP，HTTPS等网络基础知识
+- 熟悉使用MySQL数据库（InnoDB储存引擎）及数据库管理工具Navicat，熟悉InnnoDB储存引擎 的底层框架及MVCC多版本并发控制 
+- 了解Redis非关系型数据库, 实现限流桶算法
+- 熟悉基础数据结构，掌握排序，二叉树，动态规划，二叉树等算法
+- 微服务相关：了解基础微服务架构，服务网格架构
+- 熟悉使用Git以及使用Github／Gitlab仓库进行协作开发 
+- 了解一些硬件知识，在校机器人团队曾主导完成stm32f4为核心车型机器人设计制作（3D建模、打印，PCB设计），独立完成电机PID驱动，麦轮驱动，Freertos系统搭建等底层代码。国赛机器人多次获奖
 
 ### 项目经验
 - TODO
