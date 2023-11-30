@@ -16,7 +16,7 @@ jobs:
       
       - uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '16'
 
       - name: yarn工具安装
         run: npm install -g -yarn&&yarn -v
@@ -31,7 +31,7 @@ jobs:
         run: bash ./gen.sh
 
       - name: blog编译
-        run: npm run docs:build
+        run: yarn docs:build
 
       - name: 部署
         uses: JamesIves/github-pages-deploy-action@releases/v3
