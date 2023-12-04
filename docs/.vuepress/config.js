@@ -19,7 +19,7 @@ module.exports = {
     // 制定客户端临时文件路径
     // temp: 'path/to/@vuepress/core/.temp',
     // build 时候的输出目录, 默认 .vuepress/dist
-    // dest: '.vuepress/dist' 
+    dest: 'public',
     // locales 多语言配置另行查看官网
     markdown: {
         // 代码块内，是否显示行号
