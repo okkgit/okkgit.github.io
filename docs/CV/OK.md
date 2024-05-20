@@ -1,5 +1,14 @@
 ---
+sidebarDepth: 0
 sidebar: false
+navbar: false
+prev: false
+next: false
+tags:
+    - 简历
+    - 关于我
+    - 博主
+    - 我的联系方式
 ---
 
 ## 王恩超
