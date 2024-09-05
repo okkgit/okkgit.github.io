@@ -1,7 +1,6 @@
 ---
 sidebar: auto
 ---
-- rtos
 
 # 常用的api
 1. Task Management (vTask, xTask)
