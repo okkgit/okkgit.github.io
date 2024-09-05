@@ -51,7 +51,7 @@ function deal_dir(dir_path, dir_name) {
             var file_path = path.join(dir_path, file_name)
             deal_file(dir_name, topic, itemPath, file_path)
 
-            catalog_str += util.format("\n- [%s](/coding/%s/%s)", topic, dir_name, file_name)
+            catalog_str += util.format("\n- [%s](/embeded/%s/%s)", topic, dir_name, file_name)
         }
     })
 }
